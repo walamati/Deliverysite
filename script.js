@@ -11,5 +11,15 @@ async function loadData() {
 }
 
 function render(responseToJson) {
-    console.log(responseToJson['menu_1-0']);
+    let chooseMenus = document.getElementById('chooseMenus');
+    let headlines = responseToJson[`menusHeadline`];
+    let headlineImgs = responseToJson[`headlineImgs`];
+    let counter = 0;
+    for (let i = 0; i < 10; i++) { 
+        let singleMenus = responseToJson[`menu_1-${i}`];
+        chooseMenus.innerHTML += chooseMenusHtmlCode(singleMenus, i, headlines, counter, headlineImgs);
+        if (i % 2) {
+            counter++;
+        }
+    }
 }

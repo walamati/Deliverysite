@@ -1,5 +1,6 @@
 const main_URL = 'https://remotestorage-6b5e2-default-rtdb.europe-west1.firebasedatabase.app/'
 
+let chooseOfferButton = -1;
 function init() {
     loadData();
 }
@@ -22,4 +23,16 @@ function render(responseToJson) {
             counter++;
         }
     }
+}
+
+function chooseButton(index) {
+    
+    if (chooseOfferButton !== -1) {
+        let button = document.getElementById(`offersButton_${chooseOfferButton}`);
+        button.classList.remove('underline');
+    }
+    
+    chooseOfferButton = index;
+    let button = document.getElementById(`offersButton_${index}`);
+    button.classList.add('underline');
 }

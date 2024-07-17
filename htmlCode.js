@@ -7,8 +7,9 @@ function chooseMenusHtmlCode(singleMenus, i, headlines, counter, headlineImgs) {
 }
     if (i % 2 === 0) {
             htmlCode += /*html */ `
-                <h2 class="menuHedlines" >${headlines[`headline_${counter}`]}</h2>
+                <h2 class="menuHedlines" id="section${counter}">${headlines[`headline_${counter}`]}</h2>
             `;  
+            console.log(counter);
     }
     htmlCode += /*html */ `
     <div class="singleMenu">

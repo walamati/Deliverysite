@@ -25,7 +25,7 @@ function render(responseToJson) {
     }
 }
 
-function chooseButton(index) {
+function chooseButton(index, sectionId) {
     
     if (chooseOfferButton !== -1) {
         let button = document.getElementById(`offersButton_${chooseOfferButton}`);
@@ -35,4 +35,5 @@ function chooseButton(index) {
     chooseOfferButton = index;
     let button = document.getElementById(`offersButton_${index}`);
     button.classList.add('underline');
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }

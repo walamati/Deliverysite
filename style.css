@@ -161,3 +161,124 @@ body{
     bottom: 0;
     height: 100vh;
 }
+
+.chooseSingleMenuBackgroundColor{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.667);
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.finalSingleChoose{
+    background: white;
+    width: 450px;
+    height: 600px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+.finalSingleChooseContent img{
+    width: -webkit-fill-available;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid;
+}
+.singleCard{
+    width: -webkit-fill-available;
+}
+.singleCardHeadline{
+    text-align: center;
+}
+.singleCardHeadline button{
+    transform: translateY(-100px) translateX(220px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: #ffeac4;
+}
+.singleCardHeadline button:hover{
+    box-shadow: black 0px 0px 20px -10px;
+    transition: 0.5s;
+    background: #f0c87e;
+}
+.finalSingleChooseContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.finalSingleChooseContent img{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.singleCardText{
+    display: flex;
+    flex-direction: column;
+    background: #ffeac4;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.singleCardPriceContainer{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 10px;
+}
+.priceButton{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 20px;
+    border: none;
+    background: #ffeac4;
+}
+.priceButton:hover{
+    box-shadow: black 0px 0px 20px -10px;
+    transition: 0.5s;
+    background: #f0c87e;
+}
+.amountAdd{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #ffeac4;
+}
+.amountAdd:hover{
+    box-shadow: black 0px 0px 20px -10px;
+    transition: 0.5s;
+    background: #f0c87e;
+}
+.amountRemove{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #ffeac4;
+}
+.amountRemove:hover{
+    box-shadow: black 0px 0px 20px -10px;
+    transition: 0.5s;
+    background: #f0c87e;
+}
+.none{
+    display: none;
+}
+.hidden{
+    overflow: hidden;
+}
+button{
+    cursor: pointer;
+}

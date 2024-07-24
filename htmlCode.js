@@ -9,7 +9,6 @@ function chooseMenusHtmlCode(singleMenus, i, headlines, counter, headlineImgs) {
             htmlCode += /*html */ `
                 <h2 class="menuHedlines" id="section${counter}">${headlines[`headline_${counter}`]}</h2>
             `;  
-            console.log(counter);
     }
     htmlCode += /*html */ `
     <div class="singleMenu">
@@ -23,11 +22,35 @@ function chooseMenusHtmlCode(singleMenus, i, headlines, counter, headlineImgs) {
             <span>${singleMenus[`order`]}</span>
             <h3>${singleMenus[`price`]}</h3>
         </div>
-        <button class="singleMenuButton material-symbols-outlined">
+        <button onclick="chooseSingleMenu(${i})" class="singleMenuButton material-symbols-outlined">
             add
         </button>
     </div>
     `;
-    
+    return htmlCode;
+}
+function finalSingleChooseHtmlCode(i, firstResponse) {
+    let htmlCode = /*html */ `
+    <div class="singleCard">
+        <div class="singleCardHeadline">
+            <h2>${firstResponse[`menu_1-${i}`][`name`]}</h2>
+            <button onclick="closeSingleCard()" class="material-symbols-outlined">close</button>
+        </div>
+        <div class="finalSingleChooseContent">
+            <img src="${firstResponse[`menu_1-${i}`][`img`]}" alt="">
+            <div class="singleCardText">
+                <div>${firstResponse[`menu_1-${i}`][`order`]}</div>
+                <div>${firstResponse[`menu_1-${i}`][`supplement`]}</div>
+            </div>
+        </div>
+        <div class="singleCardPriceContainer">
+            <button onclick="amountAdd()" class="amountAdd material-symbols-outlined">add</button>
+            <div>${firstResponse[`menu_1-${i}`][`amount`]}</div>
+            <button onclick="amountRemove()" class="amountRemove material-symbols-outlined">remove</button>
+            <button class="priceButton">${firstResponse[`menu_1-${i}`][`price`]}</button>
+        </div>
+        
+    </div>
+    `;
     return htmlCode;
 }

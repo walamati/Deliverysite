@@ -1,16 +1,22 @@
 const main_URL = 'https://remotestorage-6b5e2-default-rtdb.europe-west1.firebasedatabase.app/'
 
 let chooseOfferButton = -1;
+let menuCounter = 0;
 let firstResponse = null;
 function init() {
     loadData();
+    intoBasketPretext();
 }
 
 async function loadData() {
     let response = await fetch(main_URL + '.json');
-    let responseToJson = await response.json();
-    render(responseToJson);
-    firstResponse = responseToJson;
+    firstResponse = await response.json();
+    render(firstResponse);
+}
+
+function intoBasketPretext() {
+    let pretext = document.getElementById('pretext');
+    pretext.innerHTML = pretextHtmlCode();
 }
 
 function render(responseToJson) {
@@ -45,7 +51,6 @@ function chooseSingleMenu(i) {
     document.getElementById('chooseSingleMenuBackgroundColor').classList.add('chooseSingleMenuBackgroundColor');
     document.getElementById('finalSingleChoose').classList.remove('none');
     document.getElementById('finalSingleChoose').innerHTML = finalSingleChooseHtmlCode(i, firstResponse);
-    console.log(firstResponse[`menu_1-${i}`]);
 }
 
 function closeSingleCard() {
@@ -54,6 +59,59 @@ function closeSingleCard() {
     document.getElementById('finalSingleChoose').classList.add('none');
 }
 
-function amountAdd() {
+function amountAdd(menu) {
+    menuCounter = firstResponse[menu]['amount'];
+    if (menuCounter >= 10) {
+        console.error('no more');
+    } else {
+        menuCounter++;
+        firstResponse[menu]['amount'] = menuCounter;
+        sendToArray(firstResponse[menu], menu);
+    }
+}
+
+function amountRemove(menu) {
+    menuCounter = firstResponse[menu]['amount'];
+    if (menuCounter <= 1) {
+        console.error('dont work');
+    } else {
+        menuCounter--;
+        firstResponse[menu]['amount'] = menuCounter;
+        sendToArray(firstResponse[menu], menu);
+    }
     
+}
+
+async function sendToArray(data, path) {
+    let response = await fetch(main_URL + path + '.json', {
+        method: `PUT`,
+        headers: {
+           'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+     });
+     let responseToJson = await response.json();
+     let lastNumber = getLastNumber(path);
+     chooseSingleMenu(lastNumber);
+}
+
+function getLastNumber(menu) {
+    let parts = menu.split('-');
+    let lastNumber = parts[1];
+    return lastNumber;
+}
+
+function chooseInBasket(menu) {
+    closeSingleCard();
+    console.log(firstResponse[menu]);
+    let inBasket = document.getElementById('inBasket');
+    inBasket.innerHTML = inBasketHtmlCode(firstResponse[menu]);
+}
+function singleBasketButton(id, id2){
+    let button = document.getElementById(id);
+    let button2 = document.getElementById(id2);
+    button.style.backgroundColor = "#FFFFFF"; 
+    button.style.boxShadow = "black 0px 0px 20px -10px";
+    button2.style.backgroundColor = "#ffeac4";
+    button2.style.boxShadow = "none";
 }

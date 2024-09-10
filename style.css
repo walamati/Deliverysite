@@ -177,7 +177,7 @@ body{
 .finalSingleChoose{
     background: white;
     width: 450px;
-    height: 600px;
+    height: fit-content;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -234,6 +234,7 @@ body{
     padding-left: 50px;
     padding-right: 50px;
     gap: 10px;
+    margin-bottom: 20px;
 }
 .priceButton{
     padding-top: 20px;
@@ -281,4 +282,35 @@ body{
 }
 button{
     cursor: pointer;
+}
+.headContainerBasket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.basketButtons{
+    display: flex;
+    align-items: center;
+    background: #ffeac4;
+    gap: 5px;
+    border-radius: 30px;
+    box-shadow: black 0px 0px 20px -10px;
+}
+.singleBasketButton{
+    border: none;
+    background: #ffeac4;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 2px;
+}
+.singleBasketButton:hover{
+    transition: 0.5s;
+}
+.basketButtonText{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }

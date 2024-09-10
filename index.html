@@ -72,7 +72,42 @@
         </div>
         <div class="chooseMenus" id="chooseMenus"></div>
       </div>
-      <div class="basket"></div>
+      <div class="basket">
+        <div id="inBasket">
+          <div class="headContainerBasket">
+            <h2>Warenkorb</h2>
+            <div class="basketButtons">
+              <button
+                style="
+                  background-color: #ffffff;
+                  box-shadow: black 0px 0px 20px -10px;
+                "
+                id="firstButton"
+                class="singleBasketButton"
+                onclick="singleBasketButton('firstButton', 'secondButton')"
+              >
+                <span class="material-symbols-outlined"> pedal_bike </span>
+                <div class="basketButtonText">
+                  <span>Lieferung</span>
+                  <span>ab 11:15 Uhr</span>
+                </div>
+              </button>
+              <button
+                id="secondButton"
+                class="singleBasketButton"
+                onclick="singleBasketButton('secondButton', 'firstButton')"
+              >
+                <span class="material-symbols-outlined"> shopping_bag </span>
+                <div class="basketButtonText">
+                  <span> Abholung </span>
+                  <span> ab 10:00 Uhr </span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="pretext" class="pretext"></div>
+        </div>
+      </div>
     </div>
     <div class="footer"></div>
     <div id="chooseSingleMenuBackgroundColor">

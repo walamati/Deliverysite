@@ -44,13 +44,24 @@ function finalSingleChooseHtmlCode(i, firstResponse) {
             </div>
         </div>
         <div class="singleCardPriceContainer">
-            <button onclick="amountAdd()" class="amountAdd material-symbols-outlined">add</button>
+            <button onclick="amountAdd('menu_1-${i}')" class="amountAdd material-symbols-outlined">add</button>
             <div>${firstResponse[`menu_1-${i}`][`amount`]}</div>
-            <button onclick="amountRemove()" class="amountRemove material-symbols-outlined">remove</button>
-            <button class="priceButton">${firstResponse[`menu_1-${i}`][`price`]}</button>
+            <button onclick="amountRemove('menu_1-${i}')" class="amountRemove material-symbols-outlined">remove</button>
+            <button onclick="chooseInBasket('menu_1-${i}')" class="priceButton">${firstResponse[`menu_1-${i}`][`price`]}</button>
         </div>
         
     </div>
     `;
+    return htmlCode;
+}
+
+function pretextHtmlCode() {
+    let htmlCode = /*html */ `
+    `;
+    return htmlCode;
+}
+
+function inBasketHtmlCode(menu) {
+    let htmlCode = `hallo`;
     return htmlCode;
 }

@@ -57,6 +57,14 @@ function finalSingleChooseHtmlCode(i, firstResponse) {
 
 function pretextHtmlCode() {
     let htmlCode = /*html */ `
+    <div class="pretext">
+        <span class="material-symbols-outlined shoppingbag"> add_shopping_cart </span>
+            <h2>Fülle deine Warenkorb</h2>
+            <span
+              >Füge einige leckere Gerichte aus der Speisekarte hinzu und
+              bestelle dein Essen.</span
+            >
+    </div>
     `;
     return htmlCode;
 }

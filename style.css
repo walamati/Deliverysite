@@ -295,6 +295,7 @@ button{
     gap: 5px;
     border-radius: 30px;
     box-shadow: black 0px 0px 20px -10px;
+    margin-bottom: 100px;
 }
 .singleBasketButton{
     border: none;
@@ -313,4 +314,17 @@ button{
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+.shoppingbag{
+    font-size: 50px;
+}
+.pretext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.pretext span{
+    text-align: center;
 }

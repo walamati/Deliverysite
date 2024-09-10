@@ -14,11 +14,6 @@ async function loadData() {
     render(firstResponse);
 }
 
-function intoBasketPretext() {
-    let pretext = document.getElementById('pretext');
-    pretext.innerHTML = pretextHtmlCode();
-}
-
 function render(responseToJson) {
     let chooseMenus = document.getElementById('chooseMenus');
     let headlines = responseToJson[`menusHeadline`];
@@ -101,12 +96,21 @@ function getLastNumber(menu) {
     return lastNumber;
 }
 
+function intoBasketPretext() {
+    let pretext = document.getElementById('pretext');
+    pretext.innerHTML = pretextHtmlCode();
+}
+
 function chooseInBasket(menu) {
     closeSingleCard();
     console.log(firstResponse[menu]);
+    let pretext = document.getElementById('pretext');
+    pretext.innerHTML = ``;
     let inBasket = document.getElementById('inBasket');
     inBasket.innerHTML = inBasketHtmlCode(firstResponse[menu]);
 }
+
+
 function singleBasketButton(id, id2){
     let button = document.getElementById(id);
     let button2 = document.getElementById(id2);
